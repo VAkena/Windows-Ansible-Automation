@@ -8,7 +8,7 @@ Automating the installation of software and configuring Windows after a clean in
 
 ## Features
 - Use Chocolatey to silently install Windows packages
-- Package <b>.exe</b> files that can be used for silent installs
+- Package <b>.exe</b> files so they can be used for silent installs
 - Configure basic Windows settings
 
 
