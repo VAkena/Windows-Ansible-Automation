@@ -6,3 +6,12 @@
       win_chocolatey:
         name: notepadplusplus
         version: '6.6'
+        state: present
+- name: Install Mozilla Firefox version 108.0.1
+  hosts: windows
+  tasks:
+    - name: Install Mozilla Firefox version 108.0.1
+      win_chocolatey:
+        name: firefox
+        version: 108.0.1
+        state: present
