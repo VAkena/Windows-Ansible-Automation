@@ -1,0 +1,20 @@
+# Install Windows Updates
+- name: Install all updates and reboot as many times as needed
+  ansible.windows.win_updates:
+    category_names: '*'
+    reboot: 'yes'
+
+- name: Download NVIDIA Studio Drivers
+  ansible.windows.win_get_url:
+    url: https://www.nvidia.com/content/DriverDownloads/confirmation.php?url=/Windows/527.56/527.56-notebook-win10-win11-64bit-international-nsd-dch-whql.exe&lang=us&type=geforcem
+    dest: 'C:\Users\vaken\Downloads'
+
+- name: Download ShutUp10/11
+  ansible.windows.win_get_url:
+    url: 'https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe'
+    dest: 'C:\Users\vaken\Downloads'
+
+- name: Download Vero True Social
+  ansible.windows.win_get_url:
+    url: 'https://vero.co/download/desktop/beta/windows'
+    dest: 'C:\Users\vaken\Downloads'

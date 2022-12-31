@@ -1,9 +1,9 @@
-- name: Install CCleaner Portable
+- name: Install CCleaner
   hosts: windows
   tasks:
-    - name: Install CCleaner Portable
+    - name: Install CCleaner
       win_chocolatey:
-        name: ccleaner.portable
+        name: ccleaner
         state: latest
 
 - name: Install VSCode
@@ -28,6 +28,14 @@
     - name: Install Python
       win_chocolatey:
         name: python
+        state: latest
+
+- name: Install Pip for Python
+  hosts: windows
+  tasks:
+    - name: Install Pip for Python
+      win_chocolatey:
+        name: pip
         state: latest
 
 - name: Install Git
