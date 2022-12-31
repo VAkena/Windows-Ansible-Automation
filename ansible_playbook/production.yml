@@ -1,17 +1,167 @@
-# Demo installation
-- name: Install Notepad++ version 6.6
+- name: Install CCleaner Portable
   hosts: windows
   tasks:
-    - name: Install notepadplusplus version 6.6
+    - name: Install CCleaner Portable
       win_chocolatey:
-        name: notepadplusplus
-        version: '6.6'
-        state: present
-- name: Install Mozilla Firefox version 108.0.1
+        name: ccleaner.portable
+        state: latest
+
+- name: Install VSCode
   hosts: windows
   tasks:
-    - name: Install Mozilla Firefox version 108.0.1
+    - name: Install VSCode
       win_chocolatey:
-        name: firefox
-        version: 108.0.1
-        state: present
+        name: vscode
+        state: latest
+
+- name: Install Material Icon Theme for VSCode
+  hosts: windows
+  tasks:
+    - name: Install Material Icon Theme for VSCode
+      win_chocolatey:
+        name: materialicon-vscode
+        state: latest
+
+- name: Install Python
+  hosts: windows
+  tasks:
+    - name: Install Python
+      win_chocolatey:
+        name: python
+        state: latest
+
+- name: Install Git
+  hosts: windows
+  tasks:
+    - name: Install Git
+      win_chocolatey:
+        name: git
+        state: latest
+
+- name: Install Audacity
+  hosts: windows
+  tasks:
+    - name: Install Audacity
+      win_chocolatey:
+        name: audacity
+        state: latest
+
+- name: Install Discord
+  hosts: windows
+  tasks:
+    - name: Install Discord
+      win_chocolatey:
+        name: discord
+        state: latest
+
+- name: Install Malwarebytes
+  hosts: windows
+  tasks:
+    - name: Install Malwarebytes
+      win_chocolatey:
+        name: malwarebytes
+        state: latest
+
+- name: Install Notion
+  hosts: windows
+  tasks:
+    - name: Install Notion
+      win_chocolatey:
+        name: notion
+        state: latest
+
+- name: Install Adobe Acrobat Reader DC
+  hosts: windows
+  tasks:
+    - name: Install Adobe Acrobat Reader DC
+      win_chocolatey:
+        name: adobereader
+        state: latest
+
+- name: Install WinRAR
+  hosts: windows
+  tasks:
+    - name: Install WinRAR
+      win_chocolatey:
+        name: winrar
+        state: latest
+
+- name: Install VLC
+  hosts: windows
+  tasks:
+    - name: Install VLC
+      win_chocolatey:
+        name: vlc
+        state: latest
+
+- name: Install Plex
+  hosts: windows
+  tasks:
+    - name: Install Plex
+      win_chocolatey:
+        name: plex
+        state: latest
+
+- name: Install Plexamp
+  hosts: windows
+  tasks:
+    - name: Install Plexamp
+      win_chocolatey:
+        name: plexamp
+        state: latest
+
+- name: Install Google Chrome
+  hosts: windows
+  tasks:
+    - name: Install Google Chrome
+      win_chocolatey:
+        name: googlechrome
+        state: latest
+
+- name: Install LastPass for Google Chrome
+  hosts: windows
+  tasks:
+    - name: Install LastPass for Google Chrome
+      win_chocolatey:
+        name: lastpass-chrome
+        state: latest
+
+- name: Install HTTPS Everywhere for Google Chrome
+  hosts: windows
+  tasks:
+    - name: HTTPS Everywhere for Google Chrome
+      win_chocolatey:
+        name: https-everywhere-chrome
+        state: latest
+
+- name: Install Adblock Plus for Google Chrome
+  hosts: windows
+  tasks:
+    - name: Install Adblock Plus for Google Chrome
+      win_chocolatey:
+        name: adblockpluschrome
+        state: latest
+
+- name: Install Google Dictionary for Google Chrome
+  hosts: windows
+  tasks:
+    - name: Install Google Dictionary for Google Chrome
+      win_chocolatey:
+        name: google-dictionary-chrome
+        state: latest
+
+- name: Install Steam
+  hosts: windows
+  tasks:
+    - name: Install Steam
+      win_chocolatey:
+        name: steam
+        state: latest
+
+- name: Install Spotify
+  hosts: windows
+  tasks:
+    - name: Install Spotify
+      win_chocolatey:
+        name: spotify
+        state: latest

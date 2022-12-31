@@ -1,6 +1,8 @@
 ### ADMIN PRIVILEGES REQUIRED ###
 
-### Linux Setup ###
+TO:DO - Write python script to configure Hosts file on Ubuntu
+
+### WSL Linux Setup ###
 Run the following scripts in the specified order
 
 1. wsl_ubuntu_setup.py
@@ -8,6 +10,6 @@ Run the following scripts in the specified order
 ### Windows Setup ###
 Run the following scripts in the specified order
 
-1. update_powershell.ps1
+1. update_powershell.ps1 (NOTE: update username and password)
 2. winrm_setup.ps1 (NOTE: update thumbprint value)
 3. ansible_remoting.ps1
