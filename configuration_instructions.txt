@@ -1,0 +1,11 @@
+### Linux Setup ###
+Run the following scripts in the specified order
+
+1. wsl_ubuntu_setup.py
+
+### Windows Setup ###
+Run the following scripts in the specified order
+
+1. update_powershell.ps1
+2. winrm_setup.ps1
+3. ansible_remoting.ps1
