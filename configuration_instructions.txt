@@ -1,3 +1,5 @@
+### ADMIN PRIVILEGES REQUIRED ###
+
 ### Linux Setup ###
 Run the following scripts in the specified order
 
@@ -7,5 +9,5 @@ Run the following scripts in the specified order
 Run the following scripts in the specified order
 
 1. update_powershell.ps1
-2. winrm_setup.ps1
+2. winrm_setup.ps1 (NOTE: update thumbprint value)
 3. ansible_remoting.ps1
