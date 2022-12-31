@@ -1,7 +1,6 @@
 # Demo installation
 - name: Install Notepad++ version 6.6
   hosts: windows
-  vars: 'windows:vars'
   tasks:
     - name: Install notepadplusplus version 6.6
       win_chocolatey:
