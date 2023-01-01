@@ -24,6 +24,8 @@ Automating the installation of software and configuring Windows after a clean in
 
 `- A Windows host`
 
+`- Your Windows host must have a local account with admin privileges`
+
 `- A Linux host (Ubuntu 20.04 LTS or higher recommended)`
 
 `- Python 3.8 as a minimum on your Linux host`
