@@ -1,15 +1,29 @@
 ### ADMIN PRIVILEGES REQUIRED ###
 
-TO:DO - Write python script to configure Hosts file on Ubuntu
+Critical configuration steps across Windows and Linux have been put into one of the provided scripts
 
-### WSL Linux Setup ###
-Run the following scripts in the specified order
+To prepare Windows to be managed by Ansible, run the provided PowerShell scripts in the specified order
 
-1. wsl_ubuntu_setup.py
+--------------------------------------------------------------------------------------------------------
+[Preparing Windows for Ansible Management]
 
-### Windows Setup ###
-Run the following scripts in the specified order
+1. Run: Update_PowerShell.ps1
+   
+   NOTE: Update the username and password variables before running as admin
 
-1. update_powershell.ps1 (NOTE: update username and password)
-2. winrm_setup.ps1 (NOTE: update thumbprint value)
-3. ansible_remoting.ps1
+   This script makes sure you're using a version of PowerShell supported by Ansible and WinRM
+
+
+2. Run: WinRM_Setup.ps1
+
+   This script uses the official Ansible documentation to automate some of the initial setup steps
+
+3. Run: WinRM_Listener_1.ps1
+
+   Copy the thumbprint for the HTTPS Listener, you will need this value for the next script
+
+4. Run: WinRM_Listener_2.ps1
+
+   Paste your thumbprint at the specified locations
+
+5. Run: Ansible_Remoting.ps1
