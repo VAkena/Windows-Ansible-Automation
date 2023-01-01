@@ -25,3 +25,11 @@ Automating the installation of software and configuring Windows after a clean in
 `- Python 3.8 as a minimum on your Linux host`
 
 `- Windows Subsystem for Linux (WSL) if running Linux on Windows`
+
+## Issues
+
+```http
+File: wsl_ubuntu_setup.py
+
+Need to fix logging for commands run using os.system()
+```
