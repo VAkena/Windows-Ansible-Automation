@@ -38,7 +38,11 @@ To prepare Windows to be managed by Ansible, run the provided PowerShell scripts
 
    NOTE: Before running, you need to update your SUDO PASSWORD for all commands
 
-         You also need to update the provided hosts file with your target machines
+         You also need to update the provided hosts file with your target machines and credentials
+         
+            - [Local hosts] IP addresses for your Windows hosts go under: [windows]
+            - [Local account] Your username and password credentials go under: [windows:vars]
+         
 
    This script does a few things:
       - Update OS packages
