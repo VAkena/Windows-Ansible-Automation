@@ -5,6 +5,7 @@ Critical configuration steps across Windows and Linux have been put into one of 
 To prepare Windows to be managed by Ansible, run the provided PowerShell scripts in the specified order
 
 --------------------------------------------------------------------------------------------------------
+
 [Preparing Windows for Ansible Management]
 
 1. Run: Update_PowerShell.ps1
@@ -27,3 +28,19 @@ To prepare Windows to be managed by Ansible, run the provided PowerShell scripts
    Paste your thumbprint at the specified locations
 
 5. Run: Ansible_Remoting.ps1
+
+
+--------------------------------------------------------------------------------------------------------
+
+[Preparing Linux to run Ansible]
+
+1. Run: wsl_ubuntu_setup.py
+
+   NOTE: Before running, you need to update your SUDO PASSWORD for all commands
+
+         You also need to update the provided hosts file with your target machines
+
+   This script does a few things:
+      - Update OS packages
+      - Install the latest version of Ansible
+      - Replaces the default Ansible hosts file with a provided one
