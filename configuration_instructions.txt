@@ -1,6 +1,6 @@
 ### ADMIN PRIVILEGES REQUIRED ###
 
-Critical configuration steps across Windows and Linux have been put into one of the provided scripts
+Critical configuration steps across Windows and Linux have been put into the provided scripts
 
 To prepare Windows to be managed by Ansible, run the provided PowerShell scripts in the specified order
 
