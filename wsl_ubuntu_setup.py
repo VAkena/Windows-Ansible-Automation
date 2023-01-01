@@ -4,6 +4,8 @@
 
 import os
 import logging
+import time
+import subprocess
 
 # Configure logging to file
 logging.basicConfig(level=logging.DEBUG, filename="log.log",
@@ -23,14 +25,27 @@ def install_ansible():
     os.system('echo vakena | sudo -S sudo apt-get update && sudo apt upgrade -y')
     os.system('echo vakena | sudo -S sudo apt -y install software-properties-common')
     os.system('echo vakena | sudo -S sudo apt-add-repository ppa:ansible/ansible')
-    os.system('echo vakena | sudo -S sudo apt install ansible')
+    os.system('echo vakena | sudo -S sudo apt install ansible -y')
+
+
+def replace_ansible_hosts():
+    # os.system('echo vakena | sudo -S sudo cp -f ./hosts /etc/ansible/hosts')
+    command = subprocess.run(["ls", "-l", "./"], capture_output=True)
+    logging.info(command)
 
 
 def main():
-    os.system('echo ### Updating OS packages ###')
+    os.system('echo UPDATING ALL OS PACKAGES')
+    time.sleep(3)
     update_os()
-    os.system('echo ### Installing latest version of Ansible ###')
+
+    os.system('echo INSTALLING THE LATEST VERSION OF ANSIBLE')
+    time.sleep(3)
     install_ansible()
+
+    os.system('echo REPLACING THE ANSIBLE HOSTS FILE')
+    time.sleep(3)
+    replace_ansible_hosts()
 
 
 if __name__ == "__main__":
