@@ -7,6 +7,9 @@ Automating the installation of software and configuring Windows after a clean in
 - [@VAkena](https://github.com/VAkena) - Developer
 - Other credited developers, names are in the relevant scripts
 
+## Where to Start
+- Please read: <b>configuration_instructions.txt</b>
+
 ## Features
 - Configure Windows for Ansible remote management
 - Configure a Linux host to be the Ansible console
