@@ -1,3 +1,6 @@
+# Description: This script configures a Linux host to act as an Ansible host
+# Tested successfully on Ubuntu 20.04 and 22.04 LTS editions
+
 import os
 import logging
 import time
@@ -7,40 +10,41 @@ logging.basicConfig(level=logging.DEBUG, filename="log.log",
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', filemode='w')
 
 
-# Update OS packages after initial WSL setup
+# Update OS packages after initial WSL configuration
 def update_os():
     commands = [
-        "echo vakena | sudo -S sudo apt-get update && sudo apt upgrade -y"]
+        "echo sudo_password | sudo -S sudo apt-get update && sudo apt upgrade -y"]
 
     # Take each command and split it before executing
-    for c in commands:
-        os.system(c)
-        logging.info(c)
+    for command in commands:
+        os.system(command)
+        logging.info(command)
 
 
 # Removes the base version of ansible that comes with Ubuntu - installs the latest version
 def install_ansible():
     # List all commands required for task
-    commands = ["echo vakena | sudo -S sudo apt remove ansible",
-                "echo vakena | sudo -S sudo apt --purge autoremove",
-                "echo vakena | sudo -S sudo apt-get update && sudo apt upgrade -y",
-                "echo vakena | sudo -S sudo apt -y install software-properties-common",
-                "echo vakena | sudo -S sudo apt-add-repository ppa:ansible/ansible",
-                "echo vakena | sudo -S sudo apt install ansible -y"]
+    commands = ["echo sudo_password | sudo -S sudo apt remove ansible",
+                "echo sudo_password | sudo -S sudo apt --purge autoremove",
+                "echo sudo_password | sudo -S sudo apt-get update && sudo apt upgrade -y",
+                "echo sudo_password | sudo -S sudo apt -y install software-properties-common",
+                "echo sudo_password | sudo -S sudo apt-add-repository ppa:ansible/ansible",
+                "echo sudo_password | sudo -S sudo apt install ansible -y"]
 
     # Take each command and split it before executing
-    for c in commands:
-        os.system(c)
-        logging.info(c)
+    for command in commands:
+        os.system(command)
+        logging.info(command)
 
 
 def replace_ansible_hosts():
-    commands = ["echo vakena | sudo -S sudo cp -f ./hosts /etc/ansible/hosts"]
+    commands = [
+        "echo sudo_password | sudo -S sudo cp -f ./hosts /etc/ansible/hosts"]
 
     # Take each command and split it before executing
-    for c in commands:
-        os.system(c)
-        logging.info(c)
+    for command in commands:
+        os.system(command)
+        logging.info(command)
 
 
 def main():
