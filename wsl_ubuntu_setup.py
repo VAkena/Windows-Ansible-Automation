@@ -1,7 +1,6 @@
 import os
 import logging
 import time
-import subprocess
 
 # Configure logging to file
 logging.basicConfig(level=logging.DEBUG, filename="log.log",
@@ -15,10 +14,8 @@ def update_os():
 
     # Take each command and split it before executing
     for c in commands:
-        split_command = c.split()
-        run = subprocess.run(split_command, capture_output=True)
-        # Logs command that ran and the exit code - exit code 0 means it ran successfully
-        logging.info(run)
+        os.system(c)
+        logging.info(c)
 
 
 # Removes the base version of ansible that comes with Ubuntu - installs the latest version
@@ -33,10 +30,8 @@ def install_ansible():
 
     # Take each command and split it before executing
     for c in commands:
-        split_command = c.split()
-        run = subprocess.run(split_command, capture_output=True)
-        # Logs command that ran and the exit code - exit code 0 means it ran successfully
-        logging.info(run)
+        os.system(c)
+        logging.info(c)
 
 
 def replace_ansible_hosts():
@@ -44,10 +39,8 @@ def replace_ansible_hosts():
 
     # Take each command and split it before executing
     for c in commands:
-        split_command = c.split()
-        run = subprocess.run(split_command, capture_output=True)
-        # Logs command that ran and the exit code - exit code 0 means it ran successfully
-        logging.info(run)
+        os.system(c)
+        logging.info(c)
 
 
 def main():
@@ -65,6 +58,11 @@ def main():
     os.system('echo REPLACING THE ANSIBLE HOSTS FILE')
     time.sleep(3)
     replace_ansible_hosts()
+
+    #
+    # TO-DO: Fix logging so we can see the outputs of each command
+    # Need to get the return code values from os.system()
+    #
 
     # Check status codes in the log file for what commands succeeded
     file = open("./log.log", "r")
