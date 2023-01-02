@@ -158,6 +158,14 @@
         name: google-dictionary-chrome
         state: latest
 
+- name: Install Adguard for Google Chrome
+  hosts: windows
+  tasks:
+    - name: Install Adguard for Google Chrome
+      win_chocolatey:
+        name: adguard-chrome
+        state: latest
+
 - name: Install Steam
   hosts: windows
   tasks:
@@ -172,4 +180,20 @@
     - name: Install Spotify
       win_chocolatey:
         name: spotify
+        state: latest
+
+- name: Install Adguard Home
+  hosts: windows
+  tasks:
+    - name: Install Adguard Home
+      win_chocolatey:
+        name: adguardhome
+        state: latest
+
+- name: Install Ubuntu 22.04 LTS for Windows Subsystem for Linux
+  hosts: windows
+  tasks:
+    - name: Install Ubuntu 22.04 LTS for Windows Subsystem for Linux
+      win_chocolatey:
+        name: wsl-ubuntu-2204
         state: latest
