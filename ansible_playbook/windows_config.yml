@@ -7,6 +7,35 @@
         category_names: '*'
         reboot: 'yes'
 
+# Install Virtual Machine Platform from Windows Optional Features
+- name: Install Virtual Machine Platform
+  hosts: windows
+  tasks:
+    - name: Install Virtual Machine Platform
+      win_optional_feature:
+        name: VirtualMachinePlatform
+        state: present
+
+# Install Windows Subsystem for Linux from Windows Optional Features
+- name: Install Windows Subsystem for Linux
+  hosts: windows
+  tasks:
+    - name: Install Windows Subsystem for Linux
+      win_optional_feature:
+        state: present
+        register: wsl_status
+    - name: Reboot if installing Linux Subsytem as feature requires it
+      win_reboot:
+        when: wsl_status.reboot_required
+
+- name: Install all updates and reboot as many times as needed
+  hosts: windows
+  tasks:
+    - name: Install all Windows updates
+      ansible.windows.win_updates:
+        category_names: '*'
+        reboot: 'yes'
+
 # Download NVIDIA drivers
 - name: Download NVIDIA Studio Drivers
   hosts: windows
@@ -14,7 +43,7 @@
     - name: Download NVIDIA Studio Drivers
       ansible.windows.win_get_url:
         url: 'https://www.nvidia.com/content/DriverDownloads/confirmation.php?url=/Windows/527.56/527.56-notebook-win10-win11-64bit-international-nsd-dch-whql.exe&lang=us&type=geforcem'
-        dest: 'C:\Users\vaken\Downloads'
+        dest: 'absolute_path'
 
 # Download ShutUp10/11
 - name: Download ShutUp10/11
@@ -23,7 +52,7 @@
     - name: Download ShutUp10/11
       ansible.windows.win_get_url:
         url: 'https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe'
-        dest: 'C:\Users\vaken\Downloads'
+        dest: 'absolute_path'
 
 # Download Vero
 - name: Download Vero True Social
@@ -32,7 +61,7 @@
     - name: Download Vero True Social
       ansible.windows.win_get_url:
         url: 'https://vero.co/download/desktop/beta/windows'
-        dest: 'C:\Users\vaken\Downloads'
+        dest: 'absolute_path'
 
 # Download O&O's AppBuster
 - name: Download AppBuster
@@ -41,4 +70,4 @@
     - name: Download AppBuster
       ansible.windows.win_get_url:
         url: 'https://dl5.oo-software.com/files/ooappbuster/OOAPB.exe'
-        dest: 'C:\Users\vaken\Downloads'
+        dest: 'absolute_path'
