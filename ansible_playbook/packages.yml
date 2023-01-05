@@ -182,14 +182,6 @@
         name: spotify
         state: latest
 
-- name: Install Adguard Home
-  hosts: windows
-  tasks:
-    - name: Install Adguard Home
-      win_chocolatey:
-        name: adguardhome
-        state: latest
-
 - name: Install Ubuntu 22.04 LTS for Windows Subsystem for Linux
   hosts: windows
   tasks:
