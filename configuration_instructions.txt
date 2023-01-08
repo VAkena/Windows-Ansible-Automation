@@ -8,6 +8,7 @@ To prepare Windows to be managed by Ansible, run the provided PowerShell scripts
 
 [Preparing Windows for Ansible Management]
 
+// Skip step 1 if you are running Windows 11
 1. Run: Update_PowerShell.ps1
    
    NOTE: Update the username and password variables before running as admin
