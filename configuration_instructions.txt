@@ -8,7 +8,8 @@ To prepare Windows to be managed by Ansible, run the provided PowerShell scripts
 
 [Preparing Windows for Ansible Management]
 
-// Skip step 1 if you are running Windows 11
+!! Skip step 1 if you are running Windows 11 !!
+
 1. Run: Update_PowerShell.ps1
    
    NOTE: Update the username and password variables before running as admin
@@ -49,3 +50,17 @@ To prepare Windows to be managed by Ansible, run the provided PowerShell scripts
       - Update OS packages
       - Install the latest version of Ansible
       - Replaces the default Ansible hosts file with a provided one
+
+--------------------------------------------------------------------------------------------------------
+
+[Running the Ansible playbooks]
+
+1. cd into the "Ansible playbook" directory
+
+2. Run the following playbooks
+
+   - ansible-playbook ./windows_config.yml 
+
+   - ansible-playbook ./packages.yml 
+
+3. WALK AWAY AND LET ANSIBLE DO IT'S THING - that is to say if there are no errors
