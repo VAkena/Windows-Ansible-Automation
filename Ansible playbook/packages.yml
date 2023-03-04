@@ -126,12 +126,12 @@
         name: googlechrome
         state: latest
 
-- name: Install LastPass for Google Chrome
+- name: Install BitWarden for Google Chrome
   hosts: windows
   tasks:
-    - name: Install LastPass for Google Chrome
+    - name: Install BitWarden for Google Chrome
       win_chocolatey:
-        name: lastpass-chrome
+        name: bitwarden-chrome
         state: latest
 
 - name: Install HTTPS Everywhere for Google Chrome
