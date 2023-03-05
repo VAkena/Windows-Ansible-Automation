@@ -20,7 +20,19 @@ $packages_to_uninstall =
     "Films & TV", 
     "Quick Assist", 
     "Microsoft Teams", 
-    "Mail and Calendar")
+    "Mail and Calendar",
+    "HP Enhanced Lighting",
+    "HP PC Hardware Diagnostics Windows",
+    "HP Privacy Settings",
+    "HP QuickDrop",
+    "myHP",
+    "Windows Sound Recorder",
+    "Xbox Game Bar Plugin",
+    "Phone Link",
+    "Spotify Music",
+    "HP Display Control Service",
+    "HP Audio Switch",
+    "WebAdvisor by McAfee")
 
 foreach ($package in $packages_to_uninstall) {
     Write-Host("Uninstalling " + $package)
