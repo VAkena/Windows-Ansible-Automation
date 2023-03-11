@@ -16,33 +16,6 @@
         name: Microsoft-Windows-Subsystem-Linux
         state: present
 
-# Download NVIDIA drivers
-- name: Download NVIDIA Studio Drivers
-  hosts: windows
-  tasks:
-    - name: Download NVIDIA Studio Drivers
-      ansible.windows.win_get_url:
-        url: 'https://www.nvidia.com/content/DriverDownloads/confirmation.php?url=/Windows/528.02/528.02-notebook-win10-win11-64bit-international-nsd-dch-whql.exe&lang=us&type=geforcem'
-        dest: 'absolute_path'
-
-# Download ShutUp10/11
-- name: Download ShutUp10/11
-  hosts: windows
-  tasks:
-    - name: Download ShutUp10/11
-      ansible.windows.win_get_url:
-        url: 'https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe'
-        dest: 'absolute_path'
-
-# Download O&O's AppBuster
-- name: Download AppBuster
-  hosts: windows
-  tasks:
-    - name: Download AppBuster
-      ansible.windows.win_get_url:
-        url: 'https://dl5.oo-software.com/files/ooappbuster/OOAPB.exe'
-        dest: 'absolute_path'
-
 # Install Windows Updates
 - name: Install all updates and reboot as many times as needed
   hosts: windows
