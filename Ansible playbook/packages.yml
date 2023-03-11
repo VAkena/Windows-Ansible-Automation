@@ -30,14 +30,6 @@
         name: python
         state: latest
 
-- name: Install Pip for Python
-  hosts: windows
-  tasks:
-    - name: Install Pip for Python
-      win_chocolatey:
-        name: pip
-        state: latest
-
 - name: Install Git
   hosts: windows
   tasks:
