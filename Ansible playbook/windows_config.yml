@@ -1,3 +1,12 @@
+# Create GodMode super user settings
+- name: Create the GodMode folder on the Desktop
+  hosts: windows
+  tasks:
+    - name: Create the GodMode folder 
+      ansible.windows.win_file:
+        path: C:\Users\vaken\Desktop\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
+        state: directory
+
 # Downloading ShutUp10
 - name: Download O&O ShutUp10
   hosts: windows
