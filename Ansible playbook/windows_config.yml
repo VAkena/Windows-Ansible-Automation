@@ -1,3 +1,21 @@
+# Downloading ShutUp10
+- name: Download O&O ShutUp10
+  hosts: windows
+  tasks:
+    - name: Download ShutUp10 to the Downloads folder
+      ansible.windows.win_get_url:
+        url: https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe
+        dest: C:\Users\user\Downloads\OOSU10.exe
+
+# Downlaoding FastRawViewer
+- name: Download FastRawViewer
+  hosts: windows
+  tasks:
+    - name: Download FastRawViewer to the Downloads folder
+      ansible.windows.win_get_url:
+        url: https://updates.fastrawviewer.com/data/FastRawViewer-2.0.6.1971-x64-Setup.exe
+        dest: C:\Users\user\Downloads\FastRawViewer-2.0.6.1971-x64-Setup.exe
+
 # Install Virtual Machine Platform from Windows Optional Features
 - name: Install Virtual Machine Platform
   hosts: windows
