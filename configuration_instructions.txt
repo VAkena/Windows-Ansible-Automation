@@ -40,6 +40,10 @@ To prepare Windows to be managed by Ansible, run the provided PowerShell scripts
 
    NOTE: Before running, you need to update your SUDO PASSWORD for all commands
 
+   Using vim, you can use the following pattern to change all the default passwords
+
+   - Pattern: :%s/sudo_password/your_password/gc
+
          You also need to update the provided hosts file with your target machines and credentials
          
             - [Local hosts] IP addresses for your Windows hosts go under: [windows]
