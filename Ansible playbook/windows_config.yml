@@ -7,6 +7,15 @@
         path: C:\Users\user\Desktop\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
         state: directory
 
+# Downloading WSL Update File
+- name: Download WSL Update File
+  hosts: windows
+  tasks:
+    - name: Download WSL Update File
+      ansible.windows.win_get_url:
+        url: https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+        dest: C:\Users\user\Downloads\wsl_update_x64.msi
+
 # Downloading ShutUp10
 - name: Download O&O ShutUp10
   hosts: windows
