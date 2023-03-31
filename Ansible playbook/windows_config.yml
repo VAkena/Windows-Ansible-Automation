@@ -4,7 +4,7 @@
   tasks:
     - name: Create the GodMode folder 
       ansible.windows.win_file:
-        path: C:\Users\vaken\Desktop\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
+        path: C:\Users\user\Desktop\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
         state: directory
 
 # Downloading ShutUp10
