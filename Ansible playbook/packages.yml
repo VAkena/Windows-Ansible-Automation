@@ -165,11 +165,3 @@
       win_chocolatey:
         name: steam
         state: latest
-
-- name: Install Ubuntu 22.04 LTS for Windows Subsystem for Linux
-  hosts: windows
-  tasks:
-    - name: Install Ubuntu 22.04 LTS for Windows Subsystem for Linux
-      win_chocolatey:
-        name: wsl-ubuntu-2204
-        state: latest

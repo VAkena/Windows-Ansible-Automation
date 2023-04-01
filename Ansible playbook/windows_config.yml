@@ -1,3 +1,19 @@
+# Copy the Windows Debloat Script
+- name: Copy Windows Debloat Script to Remote Host
+  hosts: windows
+  tasks:
+    - name: Copy file to remote server
+      copy:
+        src: ./Windows_Debloat.ps1
+        dest: C:\Users\user\Downloads
+
+# Run PowerShell Windows Debloat script
+- name: Execute PowerShell Debloat Script on Windows Target
+  hosts: windows
+  tasks:
+    - name: Run PowerShell Debloat script
+      win_command: powershell.exe C:\Users\user\Downloads\Windows_Debloat.ps1
+
 # Create GodMode super user settings
 - name: Create the GodMode folder on the Desktop
   hosts: windows
