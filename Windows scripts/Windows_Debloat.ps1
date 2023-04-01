@@ -32,7 +32,16 @@ $packages_to_uninstall =
     "Spotify Music",
     "HP Display Control Service",
     "HP Audio Switch",
-    "WebAdvisor by McAfee")
+    "WebAdvisor by McAfee"
+    "HP Smart"
+    "HP System Event Utility"
+    "HP Documentation"
+    "McAfee LiveSafe"
+    "Minecraft: Education Edition"
+    "Mixed Reality Portal"
+    "Power Automate"
+    "Microsoft Family"
+    "ExpressVPN")
 
 foreach ($package in $packages_to_uninstall) {
     Write-Host("Uninstalling " + $package)
