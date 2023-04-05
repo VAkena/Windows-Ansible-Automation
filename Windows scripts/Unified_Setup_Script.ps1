@@ -92,5 +92,8 @@ Write-Host("WinRM Service Options")
 winrm get winrm/config/Service
 winrm get winrm/config/Winrs
 
-Write-Host("STEP 5: NOW MANUALLY RUN THE ANSIBLE REMOTING SCRIPT")
+Write-Host("STEP 5: RUNNING THE ANSIBLE REMOTING SCRIPT")
 Start-Sleep -Seconds 5
+
+# STEP 5: Run the Ansible Remoting Script
+PowerShell.exe -File '.\Ansible_Remoting.ps1'
