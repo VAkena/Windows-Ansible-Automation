@@ -6,7 +6,7 @@
 # Run script as admin
 
 Write-Host("STEP 1: UPDATING POWERSHELL VERSION")
-Start-Sleep -Seconds 3
+Start-Sleep -Seconds 5
 
 $url = "https://raw.githubusercontent.com/jborean93/ansible-windows/master/scripts/Upgrade-PowerShell.ps1"
 $file = "$env:temp\Upgrade-PowerShell.ps1"
@@ -29,8 +29,8 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
 # When running on PowerShell v3.0, there is a bug with the WinRM service that limits the amount of memory available to WinRM
 # Without this hotfix installed, Ansible will fail to execute certain commands on the Windows host
 
-Write-Host("STEP 2: WINRM MEMORY HOTFIX")
-Start-Sleep -Seconds 3
+Write-Host("STEP 2: CONFIGURING THE WINRM MEMORY HOTFIX")
+Start-Sleep -Seconds 5
 
 $url = "https://raw.githubusercontent.com/jborean93/ansible-windows/master/scripts/Install-WMF3Hotfix.ps1"
 $file = "$env:temp\Install-WMF3Hotfix.ps1"
@@ -55,7 +55,7 @@ powershell.exe -ExecutionPolicy ByPass -File $file
 # STEP 3: RUN WINRM LISTENER 1
 # The WinRM services listens for requests on one or more ports. Each of these ports must have a listener created and configured.
 Write-Host("STEP 3: CONFIGURING WINRM LISTENER V1 SCRIPT")
-Start-Sleep -Seconds 3
+Start-Sleep -Seconds 5
 winrm enumerate winrm/config/Listener
 
 # STEP 4: RUN WINRM LISTENER 2
@@ -63,7 +63,7 @@ winrm enumerate winrm/config/Listener
 # Get thumbprint by running: WinRM_Listener_1.ps1
 
 Write-Host("STEP 4: CONFIGURING WINRM LISTENER V2 SCRIPT")
-Start-Sleep -Seconds 3
+Start-Sleep -Seconds 5
 
 $thumbprint = "your_thumbprint"
 Get-ChildItem -Path cert:\LocalMachine\My -Recurse | Where-Object { $_.Thumbprint -eq $thumbprint } | Select-Object *
@@ -97,3 +97,11 @@ Start-Sleep -Seconds 5
 
 # STEP 5: Run the Ansible Remoting Script
 PowerShell.exe -File '.\Ansible_Remoting.ps1'
+
+
+# ---------------------------------------------------------------------------------------------------------------------------------
+Write-Host("STEP 6: EXECUTING THE WINDOWS DEBLOAT SCRIPT")
+Start-Sleep -Seconds 5
+
+# STEP 6: Run the Windows Debloating Script
+powershell.exe -File '.\Windows_Debloat.ps1'
