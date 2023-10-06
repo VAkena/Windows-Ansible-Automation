@@ -62,14 +62,6 @@
         name: malwarebytes
         state: latest
 
-- name: Install Notion
-  hosts: windows
-  tasks:
-    - name: Install Notion
-      win_chocolatey:
-        name: notion
-        state: latest
-
 - name: Install Adobe Acrobat Reader DC
   hosts: windows
   tasks:
@@ -158,10 +150,10 @@
         name: adguard-chrome
         state: latest
 
-- name: Install Steam
+- name: Install Spotify
   hosts: windows
   tasks:
-    - name: Install Steam
+    - name: Install Spotify
       win_chocolatey:
-        name: steam
+        name: spotify
         state: latest
