@@ -14,6 +14,14 @@
         name: vscode
         state: latest
 
+- name: Install NordVPN
+  hosts: windows
+  tasks:
+    - name: Install NordVPN
+      win_chocolatey:
+        name: nordvpn
+        state: latest
+
 - name: Install Material Icon Theme for VSCode
   hosts: windows
   tasks:

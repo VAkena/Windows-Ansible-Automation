@@ -7,6 +7,7 @@ $packages_to_uninstall =
     "Get Help", 
     "Microsoft Tips", 
     "Office", 
+    "Outlook for Windows",
     "Microsoft Solitaire Collection", 
     "Microsoft Sticky Notes", 
     "Paint", 
@@ -29,8 +30,6 @@ $packages_to_uninstall =
     "Windows Sound Recorder",
     "Xbox Game Bar Plugin",
     "Phone Link",
-    "Spotify Music",
-    "HP Display Control Service",
     "HP Audio Switch",
     "WebAdvisor by McAfee"
     "HP Smart"
